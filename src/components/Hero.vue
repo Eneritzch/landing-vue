@@ -6,12 +6,12 @@ import Icon from "./Icon.vue";
   <section class="hero" id="inicio">
     <div class="container hero-inner">
       <div>
-        <span class="eyebrow">Cocina de autor</span>
+        <span class="eyebrow">Cocina de Eli</span>
         <h1>
           Reserva tu mesa y vive una <span class="hl">velada memorable</span>
         </h1>
         <p class="hero-sub">
-          En Rúbra cuidamos cada detalle: producto de temporada, maridajes
+          En Cure cuidamos cada detalle: producto de temporada, maridajes
           precisos y un ambiente íntimo. Asegura tu lugar en pocos segundos.
         </p>
         <div class="hero-cta">
@@ -27,7 +27,7 @@ import Icon from "./Icon.vue";
       <div class="rescard" aria-hidden="true">
         <div class="rescard-bar"></div>
         <div class="rescard-top">
-          <span class="name">Rúbra</span>
+          <span class="name">Cure</span>
           <span class="badge">Confirmada</span>
         </div>
         <div class="rescard-body">

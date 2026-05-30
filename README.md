@@ -1,6 +1,6 @@
-# Rúbra — Landing de reserva de restaurante (Vue)
+# Cure — Landing de reserva de restaurante (Vue)
 
-Landing page para la **reserva de mesa** de un restaurante de cocina de autor,
+Landing page para la **reserva de mesa** de un restaurante de cocina de Eli,
 construida con **Vue 3 + Vite**. Existe la [misma landing en React](../landing-react)
 con un diseño idéntico.
 

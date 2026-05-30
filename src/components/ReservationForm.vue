@@ -89,7 +89,7 @@ function handleSubmit() {
     <div class="container reserve-inner">
       <div class="reserve-aside">
         <span class="eyebrow">Reserva tu mesa</span>
-        <h2>Te esperamos en Rúbra</h2>
+        <h2>Te esperamos en Cure</h2>
         <p>Completa el formulario y recibirás la confirmación de tu mesa al instante.</p>
         <ul class="reserve-list">
           <li v-for="p in reservePerks" :key="p">

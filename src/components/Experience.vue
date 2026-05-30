@@ -10,7 +10,7 @@ import Icon from "./Icon.vue";
         <span class="eyebrow">La experiencia</span>
         <span class="divider"></span>
         <h2>Una mesa pensada en cada detalle</h2>
-        <p>Tres pilares que definen lo que vivirás en cada visita a Rúbra.</p>
+        <p>Tres pilares que definen lo que vivirás en cada visita a Cure.</p>
       </div>
 
       <div class="grid-3">

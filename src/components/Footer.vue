@@ -11,9 +11,9 @@ const emit = defineEmits(["navigate"]);
         <div class="footer-brand">
           <span class="brand">
             <span class="brand-mark"><Icon name="utensils" :size="18" /></span>
-            Rúbra
+            Cure
           </span>
-          <p>Cocina de autor con producto de temporada. Reserva tu mesa y déjate sorprender en cada visita.</p>
+          <p>Cocina de Eli con producto de temporada. Reserva tu mesa y déjate sorprender en cada visita.</p>
         </div>
 
         <div class="footer-col">
@@ -49,7 +49,7 @@ const emit = defineEmits(["navigate"]);
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 Rúbra. Todos los derechos reservados.</span>
+        <span>© 2026 Cure. Todos los derechos reservados.</span>
         <span>Hecho con Vue</span>
       </div>
     </div>

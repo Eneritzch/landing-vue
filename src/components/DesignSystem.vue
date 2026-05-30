@@ -43,7 +43,7 @@ const spacing = [
       <button class="btn btn-ghost btn-sm" @click="emit('navigate', 'landing')">
         <Icon name="arrow" :size="16" /> Volver al landing
       </button>
-      <h1>Design System de Rúbra</h1>
+      <h1>Design System de Cure</h1>
       <p>
         Documentación viva de los tokens y componentes de la interfaz. La identidad
         se construye con cuatro tonos de rojo, neutros cálidos y una tipografía serif

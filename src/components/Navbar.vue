@@ -22,7 +22,7 @@ function openDesign() {
     <div class="container nav-inner">
       <button class="brand" @click="goHome">
         <span class="brand-mark"><Icon name="utensils" :size="18" /></span>
-        Rúbra
+        Cure
       </button>
 
       <nav>
