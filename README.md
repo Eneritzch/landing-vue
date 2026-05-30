@@ -1,60 +1,59 @@
-# Aurora Café — Landing Page (Vue)
+# Aforo — Landing de registro para entradas de conciertos (Vue)
 
-Landing page de una marca de café de especialidad, construida con **Vue 3 + Vite**.
-Forma parte de un ejercicio comparativo: la [misma landing existe en React](../landing-react)
+Landing page orientada al **registro de usuarios** para comprar entradas de
+conciertos, construida con **Vue 3 + Vite**. Existe la [misma landing en React](../landing-react)
 con un diseño idéntico.
 
-🔗 **Demo en vivo:** _(se completa tras el despliegue en GitHub Pages)_
+Demo en vivo: _(se completa tras el despliegue en GitHub Pages)_
 
-## ✨ Características
+## Características
 
-- **Diseño responsive** y organizado (mobile, tablet, desktop).
-- **Componentes reutilizables** (SFC): `Navbar`, `Hero`, `Features`, `Products`, `Testimonials`, `ContactForm`, `Footer`.
-- **Formulario funcional con validaciones en frontend**: nombre, correo (formato válido) y mensaje (mínimo de caracteres), con mensajes de error en vivo y confirmación de envío.
-- **Navegación clara**: navbar fija con menú hamburguesa en móvil y scroll suave por secciones.
+- **Paleta de 4 tonos de azul sin degradados**, definida con tokens en `:root`.
+- **Sin emojis**: todos los iconos son SVG propios (`src/icons.js` + `Icon.vue`).
+- **Sin líneas comentadas** en el código.
+- **Componentes reutilizables** (SFC): `Navbar`, `Hero`, `Benefits`, `Events`, `RegisterForm`, `Footer`, `Icon`.
+- **Pantalla de Design System** (`DesignSystem.vue`) que documenta colores, tipografía, botones, badges, formularios, tarjetas y tokens de forma/espacio.
+- **Formulario de registro validado en frontend**: nombre, correo (formato), ciudad, contraseña (mínimo 8, letras y números), confirmación que coincide y aceptación de términos. Errores en vivo y mensaje de éxito.
+- **Diseño responsive** y navegación clara entre el landing y el Design System.
 
-## 🛠️ Tecnologías
+## Tecnologías
 
-- Vue 3 (`<script setup>`)
-- Vite
-- CSS puro (sistema de diseño con variables, idéntico al de la versión React)
+- Vue 3 (`<script setup>`) + Vite
+- CSS puro con sistema de diseño basado en tokens (idéntico a la versión React)
 
-## 🚀 Desarrollo local
+## Desarrollo local
 
 ```bash
-npm install      # instalar dependencias
-npm run dev      # servidor de desarrollo (http://localhost:5173)
-npm run build    # build de producción en /dist
-npm run preview  # previsualizar el build
+npm install
+npm run dev
+npm run build
+npm run preview
 ```
 
-## 🌐 Despliegue en GitHub Pages
+## Despliegue en GitHub Pages
 
-Este repo incluye un workflow de GitHub Actions (`.github/workflows/deploy.yml`)
-que compila y publica automáticamente en cada `push` a `main`.
+Incluye el workflow `.github/workflows/deploy.yml` que compila y publica en cada
+`push` a `main`.
 
-Pasos para activarlo:
-
-1. Crea un repositorio en GitHub y sube este proyecto:
+1. Sube el proyecto a GitHub:
    ```bash
    git remote add origin https://github.com/<usuario>/<repo>.git
    git branch -M main
    git push -u origin main
    ```
-2. En GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. Cada `push` a `main` desplegará el sitio. La URL será:
-   `https://<usuario>.github.io/<repo>/`
+2. En GitHub: **Settings → Pages → Source: GitHub Actions**.
+3. URL final: `https://<usuario>.github.io/<repo>/`
 
-> `vite.config.js` usa `base: './'` (rutas relativas), así el sitio funciona
-> en GitHub Pages sin necesidad de codificar el nombre del repositorio.
+`vite.config.js` usa `base: './'` (rutas relativas) para funcionar en GitHub Pages.
 
-## 📁 Estructura
+## Estructura
 
 ```
 src/
-├── components/      # componentes .vue de la interfaz
-├── data.js          # contenido (features, productos, testimonios)
-├── App.vue          # composición de la página
-├── style.css        # sistema de diseño compartido
-└── main.js          # punto de entrada
+├── components/      Navbar, Hero, Benefits, Events, RegisterForm, Footer, Icon, DesignSystem (.vue)
+├── data.js          contenido (beneficios, eventos, ciudades)
+├── icons.js         set de iconos SVG
+├── style.css        sistema de diseño compartido (tokens en :root)
+├── App.vue          composición y navegación landing / design system
+└── main.js          punto de entrada
 ```

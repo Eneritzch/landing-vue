@@ -1,47 +1,56 @@
+<script setup>
+import Icon from "./Icon.vue";
+
+const emit = defineEmits(["navigate"]);
+</script>
+
 <template>
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <a href="#top" class="nav-logo">
-            <span class="dot" /> AuroraCafé
-          </a>
-          <p>
-            Café de especialidad tostado en lotes pequeños y enviado fresco a
-            tu puerta. Hecho con amor en Ecuador.
-          </p>
+          <span class="brand">
+            <span class="brand-mark"><Icon name="ticket" :size="20" /></span>
+            Aforo
+          </span>
+          <p>La plataforma para registrarte, comprar entradas y guardar tu acceso digital a los mejores conciertos.</p>
         </div>
 
         <div class="footer-col">
-          <h4>Tienda</h4>
+          <h4>Plataforma</h4>
           <ul>
-            <li><a href="#products">Productos</a></li>
-            <li><a href="#products">Suscripción</a></li>
-            <li><a href="#products">Tarjetas regalo</a></li>
+            <li><a href="#beneficios">Beneficios</a></li>
+            <li><a href="#eventos">Eventos</a></li>
+            <li><a href="#registro">Crear cuenta</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Empresa</h4>
+          <h4>Soporte</h4>
           <ul>
-            <li><a href="#features">Nosotros</a></li>
-            <li><a href="#testimonials">Opiniones</a></li>
-            <li><a href="#contact">Contacto</a></li>
+            <li><a href="#registro">Centro de ayuda</a></li>
+            <li><a href="#registro">Reembolsos</a></li>
+            <li><a href="#registro">Contacto</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Síguenos</h4>
+          <h4>Recursos</h4>
           <ul>
-            <li><a href="#top">Instagram</a></li>
-            <li><a href="#top">Facebook</a></li>
-            <li><a href="#top">TikTok</a></li>
+            <li>
+              <button class="nav-link-btn" style="color: var(--blue-100)" @click="emit('navigate', 'design')">
+                Design System
+              </button>
+            </li>
+            <li><a href="#inicio">Términos</a></li>
+            <li><a href="#inicio">Privacidad</a></li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        © 2026 Aurora Café. Todos los derechos reservados. Hecho con ☕ y Vue.
+        <span>© 2026 Aforo. Todos los derechos reservados.</span>
+        <span>Hecho con Vue</span>
       </div>
     </div>
   </footer>

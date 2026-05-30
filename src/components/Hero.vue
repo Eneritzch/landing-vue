@@ -1,39 +1,53 @@
+<script setup>
+import Icon from "./Icon.vue";
+</script>
+
 <template>
-  <section class="hero" id="top">
+  <section class="hero" id="inicio">
     <div class="container hero-inner">
-      <div class="hero-content">
-        <span class="eyebrow">Café de especialidad</span>
+      <div>
+        <span class="eyebrow">Entradas de conciertos</span>
         <h1>
-          Despierta tus sentidos con <span>café recién tostado</span>
+          Crea tu cuenta y asegura tu lugar en el <span class="hl">próximo concierto</span>
         </h1>
         <p class="hero-sub">
-          Granos de origen único, tostados en lotes pequeños y enviados a tu
-          puerta en 48 horas. Cada taza cuenta una historia.
+          Regístrate en Aforo para comprar entradas con preventa exclusiva,
+          pago seguro y tu acceso digital listo al instante.
         </p>
         <div class="hero-cta">
-          <a href="#products" class="btn btn-primary">Ver productos</a>
-          <a href="#contact" class="btn btn-secondary">Pre-ordenar ahora</a>
+          <a href="#registro" class="btn btn-primary">Crear cuenta gratis</a>
+          <a href="#eventos" class="btn btn-ghost">Ver eventos</a>
         </div>
-        <div class="hero-stats">
-          <div>
-            <div class="num">12k+</div>
-            <div class="lbl">Clientes felices</div>
-          </div>
-          <div>
-            <div class="num">86+</div>
-            <div class="lbl">Puntaje de cata</div>
-          </div>
-          <div>
-            <div class="num">48h</div>
-            <div class="lbl">Envío express</div>
-          </div>
+        <div class="hero-points">
+          <span class="hero-point"><span class="ic"><Icon name="check" :size="16" /></span> Sin costos ocultos</span>
+          <span class="hero-point"><span class="ic"><Icon name="check" :size="16" /></span> Preventa exclusiva</span>
+          <span class="hero-point"><span class="ic"><Icon name="check" :size="16" /></span> Entrada con QR</span>
         </div>
       </div>
 
-      <div class="hero-art">
-        <span class="cup" role="img" aria-label="Taza de café">☕</span>
-        <div class="hero-badge">
-          Tueste fresco<small>Cada semana</small>
+      <div class="ticket" aria-hidden="true">
+        <div class="ticket-top">
+          <span class="badge">Preventa</span>
+          <h3>Nova Sound Fest</h3>
+          <span>Estadio Olímpico · Quito</span>
+        </div>
+        <div class="ticket-perf"></div>
+        <div class="ticket-body">
+          <div class="ticket-field">
+            <span>Fecha</span>
+            <strong>12 Jul · 19:00</strong>
+          </div>
+          <div class="ticket-field">
+            <span>Zona</span>
+            <strong>General A</strong>
+          </div>
+          <div class="ticket-field">
+            <span>Precio</span>
+            <strong>$45</strong>
+          </div>
+          <div class="ticket-qr">
+            <Icon name="qr" :size="56" />
+          </div>
         </div>
       </div>
     </div>

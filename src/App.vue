@@ -1,21 +1,32 @@
 <script setup>
+import { ref, watch } from "vue";
 import Navbar from "./components/Navbar.vue";
 import Hero from "./components/Hero.vue";
-import Features from "./components/Features.vue";
-import Products from "./components/Products.vue";
-import Testimonials from "./components/Testimonials.vue";
-import ContactForm from "./components/ContactForm.vue";
+import Benefits from "./components/Benefits.vue";
+import Events from "./components/Events.vue";
+import RegisterForm from "./components/RegisterForm.vue";
 import Footer from "./components/Footer.vue";
+import DesignSystem from "./components/DesignSystem.vue";
+
+const view = ref("landing");
+
+watch(view, () => {
+  window.scrollTo({ top: 0 });
+});
+
+function navigate(target) {
+  view.value = target;
+}
 </script>
 
 <template>
-  <Navbar />
-  <main>
+  <Navbar @navigate="navigate" />
+  <main v-if="view === 'landing'">
     <Hero />
-    <Features />
-    <Products />
-    <Testimonials />
-    <ContactForm />
+    <Benefits />
+    <Events />
+    <RegisterForm />
   </main>
-  <Footer />
+  <DesignSystem v-else @navigate="navigate" />
+  <Footer @navigate="navigate" />
 </template>
