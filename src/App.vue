@@ -2,9 +2,9 @@
 import { ref, watch } from "vue";
 import Navbar from "./components/Navbar.vue";
 import Hero from "./components/Hero.vue";
-import Benefits from "./components/Benefits.vue";
-import Events from "./components/Events.vue";
-import RegisterForm from "./components/RegisterForm.vue";
+import Experience from "./components/Experience.vue";
+import Menu from "./components/Menu.vue";
+import ReservationForm from "./components/ReservationForm.vue";
 import Footer from "./components/Footer.vue";
 import DesignSystem from "./components/DesignSystem.vue";
 
@@ -23,9 +23,9 @@ function navigate(target) {
   <Navbar @navigate="navigate" />
   <main v-if="view === 'landing'">
     <Hero />
-    <Benefits />
-    <Events />
-    <RegisterForm />
+    <Experience />
+    <Menu />
+    <ReservationForm />
   </main>
   <DesignSystem v-else @navigate="navigate" />
   <Footer @navigate="navigate" />

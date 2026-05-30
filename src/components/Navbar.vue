@@ -21,8 +21,8 @@ function openDesign() {
   <header class="navbar">
     <div class="container nav-inner">
       <button class="brand" @click="goHome">
-        <span class="brand-mark"><Icon name="ticket" :size="20" /></span>
-        Aforo
+        <span class="brand-mark"><Icon name="utensils" :size="18" /></span>
+        Rúbra
       </button>
 
       <nav>
@@ -37,8 +37,8 @@ function openDesign() {
       </nav>
 
       <div class="nav-actions">
-        <a href="#registro" class="btn btn-primary btn-sm nav-cta-desktop" @click="goHome">
-          Crear cuenta
+        <a href="#reservar" class="btn btn-primary btn-sm nav-cta-desktop" @click="goHome">
+          Reservar
         </a>
         <button
           class="nav-toggle"

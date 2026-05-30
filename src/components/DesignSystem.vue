@@ -3,29 +3,29 @@ import Icon from "./Icon.vue";
 
 const emit = defineEmits(["navigate"]);
 
-const blues = [
-  { token: "--blue-900", hex: "#08193A", name: "Azul 900" },
-  { token: "--blue-600", hex: "#1B4DD1", name: "Azul 600" },
-  { token: "--blue-400", hex: "#4F86F7", name: "Azul 400" },
-  { token: "--blue-100", hex: "#DCE8FB", name: "Azul 100" },
+const reds = [
+  { token: "--red-900", hex: "#38090C", name: "Rojo 900" },
+  { token: "--red-600", hex: "#A4161A", name: "Rojo 600" },
+  { token: "--red-400", hex: "#D24B46", name: "Rojo 400" },
+  { token: "--red-100", hex: "#F7E4E2", name: "Rojo 100" },
 ];
 
 const neutrals = [
-  { token: "--ink", hex: "#121620", name: "Ink" },
-  { token: "--muted", hex: "#5B6478", name: "Muted" },
-  { token: "--line", hex: "#E4E8F0", name: "Line" },
-  { token: "--surface", hex: "#F6F8FC", name: "Surface" },
+  { token: "--ink", hex: "#211A18", name: "Ink" },
+  { token: "--muted", hex: "#7C6F69", name: "Muted" },
+  { token: "--line", hex: "#ECE4DC", name: "Line" },
+  { token: "--surface", hex: "#FAF6F1", name: "Surface" },
 ];
 
 const states = [
-  { token: "--success", hex: "#1F8A54", name: "Success" },
-  { token: "--danger", hex: "#D12F3F", name: "Danger" },
+  { token: "--success", hex: "#2F7D4F", name: "Success" },
+  { token: "--danger", hex: "#C62828", name: "Danger" },
 ];
 
 const radii = [
-  { token: "--radius-sm", value: "8px" },
-  { token: "--radius-md", value: "14px" },
-  { token: "--radius-lg", value: "22px" },
+  { token: "--radius-sm", value: "6px" },
+  { token: "--radius-md", value: "12px" },
+  { token: "--radius-lg", value: "18px" },
   { token: "--radius-pill", value: "999px" },
 ];
 
@@ -43,37 +43,38 @@ const spacing = [
       <button class="btn btn-ghost btn-sm" @click="emit('navigate', 'landing')">
         <Icon name="arrow" :size="16" /> Volver al landing
       </button>
-      <h1>Design System de Aforo</h1>
+      <h1>Design System de Rúbra</h1>
       <p>
-        Documentación viva de los tokens y componentes que construyen la interfaz.
-        Toda la paleta se basa en cuatro tonos de azul, más neutros y colores de estado.
+        Documentación viva de los tokens y componentes de la interfaz. La identidad
+        se construye con cuatro tonos de rojo, neutros cálidos y una tipografía serif
+        para títulos junto a una sans limpia para el cuerpo.
       </p>
     </div>
 
     <section class="ds-block">
       <h2>Color</h2>
-      <p>Cuatro tonos de azul como base de marca, sin degradados. Los neutros aportan jerarquía y los colores de estado comunican retroalimentación del formulario.</p>
+      <p>Cuatro tonos de rojo como base de marca, sin degradados. Los neutros cálidos sostienen la lectura y los colores de estado comunican la validación del formulario.</p>
 
-      <h3 style="margin: 0 0 16px">Azules de marca</h3>
+      <h3 style="margin: 0 0 16px">Rojos de marca</h3>
       <div class="swatch-grid">
-        <div class="swatch" v-for="c in blues" :key="c.token">
+        <div class="swatch" v-for="c in reds" :key="c.token">
           <div class="swatch-color" :style="{ background: c.hex }"></div>
           <div class="swatch-meta">
             <strong>{{ c.name }}</strong>
             <code>{{ c.hex }}</code>
-            <code style="display: block; color: var(--blue-600)">{{ c.token }}</code>
+            <code style="display: block; color: var(--red-600)">{{ c.token }}</code>
           </div>
         </div>
       </div>
 
-      <h3 style="margin: 32px 0 16px">Neutros</h3>
+      <h3 style="margin: 32px 0 16px">Neutros cálidos</h3>
       <div class="swatch-grid">
         <div class="swatch" v-for="c in neutrals" :key="c.token">
           <div class="swatch-color" :style="{ background: c.hex }"></div>
           <div class="swatch-meta">
             <strong>{{ c.name }}</strong>
             <code>{{ c.hex }}</code>
-            <code style="display: block; color: var(--blue-600)">{{ c.token }}</code>
+            <code style="display: block; color: var(--red-600)">{{ c.token }}</code>
           </div>
         </div>
       </div>
@@ -85,7 +86,7 @@ const spacing = [
           <div class="swatch-meta">
             <strong>{{ c.name }}</strong>
             <code>{{ c.hex }}</code>
-            <code style="display: block; color: var(--blue-600)">{{ c.token }}</code>
+            <code style="display: block; color: var(--red-600)">{{ c.token }}</code>
           </div>
         </div>
       </div>
@@ -93,21 +94,21 @@ const spacing = [
 
     <section class="ds-block">
       <h2>Tipografía</h2>
-      <p>Escala basada en la fuente del sistema. Cada nivel usa un token de tamaño definido en el root.</p>
+      <p>Cormorant Garamond aporta el carácter de restaurante en los títulos; Inter mantiene el cuerpo claro y minimalista.</p>
       <div>
-        <div class="type-row"><span class="label">--fs-h1</span><span style="font-size: var(--fs-h1); font-weight: 800">Título principal</span></div>
-        <div class="type-row"><span class="label">--fs-h2</span><span style="font-size: var(--fs-h2); font-weight: 700">Título de sección</span></div>
-        <div class="type-row"><span class="label">--fs-h3</span><span style="font-size: var(--fs-h3); font-weight: 700">Subtítulo</span></div>
-        <div class="type-row"><span class="label">--fs-lg</span><span style="font-size: var(--fs-lg)">Texto destacado de párrafo</span></div>
-        <div class="type-row"><span class="label">--fs-body</span><span style="font-size: var(--fs-body)">Texto de cuerpo estándar</span></div>
-        <div class="type-row"><span class="label">--fs-small</span><span style="font-size: var(--fs-small)">Texto pequeño y notas</span></div>
+        <div class="type-row"><span class="label">--fs-h1 · serif</span><span style="font-size: var(--fs-h1); font-family: var(--font-serif)">Título principal</span></div>
+        <div class="type-row"><span class="label">--fs-h2 · serif</span><span style="font-size: var(--fs-h2); font-family: var(--font-serif)">Título de sección</span></div>
+        <div class="type-row"><span class="label">--fs-h3 · serif</span><span style="font-size: var(--fs-h3); font-family: var(--font-serif)">Subtítulo</span></div>
+        <div class="type-row"><span class="label">--fs-lg · sans</span><span style="font-size: var(--fs-lg)">Texto destacado de párrafo</span></div>
+        <div class="type-row"><span class="label">--fs-body · sans</span><span style="font-size: var(--fs-body)">Texto de cuerpo estándar</span></div>
+        <div class="type-row"><span class="label">--fs-small · sans</span><span style="font-size: var(--fs-small)">Texto pequeño y notas</span></div>
         <div class="type-row"><span class="label">eyebrow</span><span class="eyebrow">Etiqueta superior</span></div>
       </div>
     </section>
 
     <section class="ds-block">
       <h2>Botones</h2>
-      <p>Tres variantes y un estado deshabilitado, todas con esquinas tipo pill.</p>
+      <p>Tres variantes y un estado deshabilitado, con esquinas sutiles para un acabado limpio.</p>
       <div class="ds-row">
         <button class="btn btn-primary">Primario</button>
         <button class="btn btn-secondary">Secundario</button>
@@ -119,17 +120,17 @@ const spacing = [
 
     <section class="ds-block">
       <h2>Etiquetas</h2>
-      <p>Badges para destacar estados de eventos.</p>
+      <p>Badges para clasificar los platos del menú y estados de la reserva.</p>
       <div class="ds-row">
-        <span class="badge">Preventa</span>
-        <span class="badge">Últimas</span>
-        <span class="badge badge-solid">Nuevo</span>
+        <span class="badge">Entrada</span>
+        <span class="badge">Postre</span>
+        <span class="badge badge-solid">Confirmada</span>
       </div>
     </section>
 
     <section class="ds-block">
       <h2>Campos de formulario</h2>
-      <p>Estados por defecto, foco, error y selección. Mismos controles usados en el registro.</p>
+      <p>Estados por defecto, foco, error y selección. Mismos controles usados en la reserva.</p>
       <div class="ds-panel" style="max-width: 560px">
         <div class="form-group">
           <label class="form-label">Campo de texto</label>
@@ -144,43 +145,36 @@ const spacing = [
           <label class="form-label">Selector</label>
           <select class="form-control">
             <option value="">Selecciona una opción</option>
-            <option>Quito</option>
-            <option>Guayaquil</option>
+            <option>2 personas</option>
+            <option>4 personas</option>
           </select>
         </div>
         <label class="form-check">
           <input type="checkbox" checked />
-          <span>Casilla de aceptación de términos</span>
+          <span>Casilla de confirmación de datos</span>
         </label>
       </div>
     </section>
 
     <section class="ds-block">
-      <h2>Tarjetas</h2>
-      <p>Componentes de contenido usados en beneficios y eventos.</p>
+      <h2>Componentes de contenido</h2>
+      <p>Tarjeta de experiencia e ítem de menú, reutilizados en el landing.</p>
       <div class="grid-3">
-        <article class="card benefit-card">
-          <span class="benefit-icon"><Icon name="shield" /></span>
-          <h3>Tarjeta de beneficio</h3>
-          <p>Icono, título y descripción breve sobre fondo blanco.</p>
+        <article class="exp-card">
+          <span class="exp-icon"><Icon name="wine" :size="28" /></span>
+          <h3>Tarjeta de experiencia</h3>
+          <p>Icono, título serif y descripción breve, centrados.</p>
         </article>
-        <article class="event-card">
-          <div class="event-date">
-            <span class="day">12</span>
-            <span class="mon">Jul</span>
+      </div>
+      <div class="menu-list" style="margin-top: 32px">
+        <article class="menu-item">
+          <div class="menu-top">
+            <span class="menu-name">Ítem de menú</span>
+            <span class="menu-dots"></span>
+            <span class="menu-price">$18</span>
           </div>
-          <div class="event-body">
-            <span class="badge">Preventa</span>
-            <h3>Tarjeta de evento</h3>
-            <ul class="event-meta">
-              <li><Icon name="pin" :size="16" /> Estadio Olímpico</li>
-              <li><Icon name="clock" :size="16" /> 19:00</li>
-            </ul>
-            <div class="event-foot">
-              <span class="event-price">$45 <span>/ entrada</span></span>
-              <button class="btn btn-primary btn-sm">Comprar</button>
-            </div>
-          </div>
+          <p class="menu-desc">Nombre del plato, línea de puntos, precio y descripción debajo.</p>
+          <span class="badge">Principal</span>
         </article>
       </div>
     </section>

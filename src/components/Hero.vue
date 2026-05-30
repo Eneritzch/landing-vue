@@ -6,48 +6,51 @@ import Icon from "./Icon.vue";
   <section class="hero" id="inicio">
     <div class="container hero-inner">
       <div>
-        <span class="eyebrow">Entradas de conciertos</span>
+        <span class="eyebrow">Cocina de autor</span>
         <h1>
-          Crea tu cuenta y asegura tu lugar en el <span class="hl">próximo concierto</span>
+          Reserva tu mesa y vive una <span class="hl">velada memorable</span>
         </h1>
         <p class="hero-sub">
-          Regístrate en Aforo para comprar entradas con preventa exclusiva,
-          pago seguro y tu acceso digital listo al instante.
+          En Rúbra cuidamos cada detalle: producto de temporada, maridajes
+          precisos y un ambiente íntimo. Asegura tu lugar en pocos segundos.
         </p>
         <div class="hero-cta">
-          <a href="#registro" class="btn btn-primary">Crear cuenta gratis</a>
-          <a href="#eventos" class="btn btn-ghost">Ver eventos</a>
+          <a href="#reservar" class="btn btn-primary">Reservar mesa</a>
+          <a href="#menu" class="btn btn-ghost">Ver el menú</a>
         </div>
         <div class="hero-points">
-          <span class="hero-point"><span class="ic"><Icon name="check" :size="16" /></span> Sin costos ocultos</span>
-          <span class="hero-point"><span class="ic"><Icon name="check" :size="16" /></span> Preventa exclusiva</span>
-          <span class="hero-point"><span class="ic"><Icon name="check" :size="16" /></span> Entrada con QR</span>
+          <span class="hero-point"><span class="ic"><Icon name="check" :size="18" /></span> Confirmación inmediata</span>
+          <span class="hero-point"><span class="ic"><Icon name="check" :size="18" /></span> Sin costo de reserva</span>
         </div>
       </div>
 
-      <div class="ticket" aria-hidden="true">
-        <div class="ticket-top">
-          <span class="badge">Preventa</span>
-          <h3>Nova Sound Fest</h3>
-          <span>Estadio Olímpico · Quito</span>
+      <div class="rescard" aria-hidden="true">
+        <div class="rescard-bar"></div>
+        <div class="rescard-top">
+          <span class="name">Rúbra</span>
+          <span class="badge">Confirmada</span>
         </div>
-        <div class="ticket-perf"></div>
-        <div class="ticket-body">
-          <div class="ticket-field">
+        <div class="rescard-body">
+          <div class="rescard-field">
             <span>Fecha</span>
-            <strong>12 Jul · 19:00</strong>
+            <strong>Vie 12 Jun</strong>
           </div>
-          <div class="ticket-field">
-            <span>Zona</span>
-            <strong>General A</strong>
+          <div class="rescard-field">
+            <span>Hora</span>
+            <strong>20:30</strong>
           </div>
-          <div class="ticket-field">
-            <span>Precio</span>
-            <strong>$45</strong>
+          <div class="rescard-field">
+            <span>Personas</span>
+            <strong>4</strong>
           </div>
-          <div class="ticket-qr">
-            <Icon name="qr" :size="56" />
+          <div class="rescard-field">
+            <span>Mesa</span>
+            <strong>Salón principal</strong>
           </div>
+        </div>
+        <div class="rescard-foot">
+          <span>Reserva #RB-2048</span>
+          <span>A nombre de Ana P.</span>
         </div>
       </div>
     </div>

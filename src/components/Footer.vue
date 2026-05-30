@@ -10,27 +10,27 @@ const emit = defineEmits(["navigate"]);
       <div class="footer-grid">
         <div class="footer-brand">
           <span class="brand">
-            <span class="brand-mark"><Icon name="ticket" :size="20" /></span>
-            Aforo
+            <span class="brand-mark"><Icon name="utensils" :size="18" /></span>
+            Rúbra
           </span>
-          <p>La plataforma para registrarte, comprar entradas y guardar tu acceso digital a los mejores conciertos.</p>
+          <p>Cocina de autor con producto de temporada. Reserva tu mesa y déjate sorprender en cada visita.</p>
         </div>
 
         <div class="footer-col">
-          <h4>Plataforma</h4>
+          <h4>Restaurante</h4>
           <ul>
-            <li><a href="#beneficios">Beneficios</a></li>
-            <li><a href="#eventos">Eventos</a></li>
-            <li><a href="#registro">Crear cuenta</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#menu">Menú</a></li>
+            <li><a href="#reservar">Reservar</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Soporte</h4>
+          <h4>Visítanos</h4>
           <ul>
-            <li><a href="#registro">Centro de ayuda</a></li>
-            <li><a href="#registro">Reembolsos</a></li>
-            <li><a href="#registro">Contacto</a></li>
+            <li><a href="#reservar">Av. de la Cocina 123, Quito</a></li>
+            <li><a href="#reservar">+593 99 123 4567</a></li>
+            <li><a href="#reservar">Mar a Dom, 13:00 - 23:00</a></li>
           </ul>
         </div>
 
@@ -38,7 +38,7 @@ const emit = defineEmits(["navigate"]);
           <h4>Recursos</h4>
           <ul>
             <li>
-              <button class="nav-link-btn" style="color: var(--blue-100)" @click="emit('navigate', 'design')">
+              <button class="nav-link-btn" style="color: var(--red-100)" @click="emit('navigate', 'design')">
                 Design System
               </button>
             </li>
@@ -49,7 +49,7 @@ const emit = defineEmits(["navigate"]);
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 Aforo. Todos los derechos reservados.</span>
+        <span>© 2026 Rúbra. Todos los derechos reservados.</span>
         <span>Hecho con Vue</span>
       </div>
     </div>
