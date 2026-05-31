@@ -4,7 +4,7 @@ import { reservePerks, guestOptions, timeSlots, occasions } from "../../data";
 import Icon from "../Icon.vue";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const PHONE_RE = /^[0-9+\s-]{7,}$/;
+const PHONE_RE = /^\d{10}$/;
 
 function today() {
   const d = new Date();
@@ -35,8 +35,8 @@ function validate() {
 
   if (!values.phone.trim()) {
     e.phone = "Ingresa un teléfono de contacto.";
-  } else if (!PHONE_RE.test(values.phone.trim())) {
-    e.phone = "Ingresa un teléfono válido (mínimo 7 dígitos).";
+  } else if (!PHONE_RE.test(values.phone.replace(/\D/g, ""))) {
+    e.phone = "Ingresa un teléfono válido de Ecuador (10 dígitos).";
   }
 
   if (!values.date) {
@@ -131,7 +131,7 @@ function handleSubmit() {
           <div class="form-group">
             <label class="form-label" for="phone">Teléfono</label>
             <input id="phone" type="tel" class="form-control" :class="{ invalid: errors.phone }"
-              placeholder="+593 99 123 4567" v-model="values.phone"
+              placeholder="0991234567" v-model="values.phone"
               @input="handleInput('phone')" @blur="handleBlur('phone')" />
             <span v-if="errors.phone" class="form-error">{{ errors.phone }}</span>
           </div>
