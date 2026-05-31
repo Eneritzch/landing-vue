@@ -61,21 +61,27 @@ function applyErrors(e) {
   Object.assign(errors, e);
 }
 
+function visible(allErrors) {
+  return Object.fromEntries(
+    Object.entries(allErrors).filter(([field]) => touched[field])
+  );
+}
+
 function handleInput(field) {
-  if (touched[field]) applyErrors(validate());
+  if (touched[field]) applyErrors(visible(validate()));
 }
 
 function handleBlur(field) {
   touched[field] = true;
-  applyErrors(validate());
+  applyErrors(visible(validate()));
 }
 
 function handleSubmit() {
-  const found = validate();
-  applyErrors(found);
   ["name", "email", "phone", "date", "time", "guests"].forEach((k) => {
     touched[k] = true;
   });
+  const found = validate();
+  applyErrors(visible(found));
   if (Object.keys(found).length === 0) {
     done.value = true;
     Object.assign(values, { name: "", email: "", phone: "", date: "", time: "", guests: "", occasion: "", notes: "" });
