@@ -1,7 +1,7 @@
 <script setup>
 import { reactive, ref } from "vue";
-import { reservePerks, guestOptions, timeSlots, occasions } from "../data";
-import Icon from "./Icon.vue";
+import { reservePerks, guestOptions, timeSlots, occasions } from "../../data";
+import Icon from "../Icon.vue";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^[0-9+\s-]{7,}$/;

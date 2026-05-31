@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar.vue";
 import Hero from "./components/Hero.vue";
 import Experience from "./components/Experience.vue";
 import Menu from "./components/Menu.vue";
-import ReservationForm from "./components/ReservationForm.vue";
+import ReservationForm from "./components/forms/ReservationForm.vue";
 import Footer from "./components/Footer.vue";
 import DesignSystem from "./components/DesignSystem.vue";
 
