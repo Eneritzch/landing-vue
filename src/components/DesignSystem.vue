@@ -1,5 +1,10 @@
 <script setup>
 import Icon from "./Icon.vue";
+import Button from "./ui/Button.vue";
+import Badge from "./ui/Badge.vue";
+import Card from "./ui/Card.vue";
+import TextField from "./ui/TextField.vue";
+import SelectField from "./ui/SelectField.vue";
 
 const emit = defineEmits(["navigate"]);
 
@@ -110,11 +115,11 @@ const spacing = [
       <h2>Botones</h2>
       <p>Tres variantes y un estado deshabilitado, con esquinas sutiles para un acabado limpio.</p>
       <div class="ds-row">
-        <button class="btn btn-primary">Primario</button>
-        <button class="btn btn-secondary">Secundario</button>
-        <button class="btn btn-ghost">Contorno</button>
-        <button class="btn btn-primary btn-sm">Pequeño</button>
-        <button class="btn btn-primary" disabled>Deshabilitado</button>
+        <Button variant="primary">Primario</Button>
+        <Button variant="secondary">Secundario</Button>
+        <Button variant="ghost">Contorno</Button>
+        <Button variant="primary" size="sm">Pequeño</Button>
+        <Button variant="primary" disabled>Deshabilitado</Button>
       </div>
     </section>
 
@@ -122,9 +127,9 @@ const spacing = [
       <h2>Etiquetas</h2>
       <p>Badges para clasificar los platos del menú y estados de la reserva.</p>
       <div class="ds-row">
-        <span class="badge">Entrada</span>
-        <span class="badge">Postre</span>
-        <span class="badge badge-solid">Confirmada</span>
+        <Badge>Entrada</Badge>
+        <Badge>Postre</Badge>
+        <Badge variant="solid">Confirmada</Badge>
       </div>
     </section>
 
@@ -132,23 +137,9 @@ const spacing = [
       <h2>Campos de formulario</h2>
       <p>Estados por defecto, foco, error y selección. Mismos controles usados en la reserva.</p>
       <div class="ds-panel" style="max-width: 560px">
-        <div class="form-group">
-          <label class="form-label">Campo de texto</label>
-          <input class="form-control" placeholder="Escribe aquí" value="Ana Pérez" />
-        </div>
-        <div class="form-group">
-          <label class="form-label">Campo con error</label>
-          <input class="form-control invalid" value="correo-invalido" />
-          <span class="form-error">El correo no tiene un formato válido.</span>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Selector</label>
-          <select class="form-control">
-            <option value="">Selecciona una opción</option>
-            <option>2 personas</option>
-            <option>4 personas</option>
-          </select>
-        </div>
+        <TextField label="Campo de texto" placeholder="Escribe aquí" model-value="Ana Pérez" />
+        <TextField label="Campo con error" error="El correo no tiene un formato válido." model-value="correo-invalido" />
+        <SelectField label="Selector" placeholder="Selecciona una opción" :options="['2 personas', '4 personas']" model-value="" />
         <label class="form-check">
           <input type="checkbox" checked />
           <span>Casilla de confirmación de datos</span>
@@ -160,11 +151,14 @@ const spacing = [
       <h2>Componentes de contenido</h2>
       <p>Tarjeta de experiencia e ítem de menú, reutilizados en el landing.</p>
       <div class="grid-3">
-        <article class="exp-card">
-          <span class="exp-icon"><Icon name="wine" :size="28" /></span>
-          <h3>Tarjeta de experiencia</h3>
-          <p>Icono, título serif y descripción breve, centrados.</p>
-        </article>
+        <Card
+          title="Tarjeta de experiencia"
+          description="Icono, título serif y descripción breve, centrados."
+        >
+          <template #icon>
+            <Icon name="wine" :size="28" />
+          </template>
+        </Card>
       </div>
       <div class="menu-list" style="margin-top: 32px">
         <article class="menu-item">
@@ -174,7 +168,7 @@ const spacing = [
             <span class="menu-price">$18</span>
           </div>
           <p class="menu-desc">Nombre del plato, línea de puntos, precio y descripción debajo.</p>
-          <span class="badge">Principal</span>
+          <Badge>Principal</Badge>
         </article>
       </div>
     </section>

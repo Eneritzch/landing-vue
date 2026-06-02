@@ -2,6 +2,9 @@
 import { reactive, ref } from "vue";
 import { reservePerks, guestOptions, timeSlots, occasions } from "../../data";
 import Icon from "../Icon.vue";
+import TextField from "../ui/TextField.vue";
+import SelectField from "../ui/SelectField.vue";
+import Button from "../ui/Button.vue";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_RE = /^\d{10}$/;
@@ -111,74 +114,92 @@ function handleSubmit() {
           <Icon name="check" :size="20" /> Reserva confirmada. Te enviamos los detalles por correo.
         </div>
 
-        <div class="form-group full">
-          <label class="form-label" for="name">Nombre completo</label>
-          <input id="name" type="text" class="form-control" :class="{ invalid: errors.name }"
-            placeholder="Ej. Ana Pérez" v-model="values.name"
-            @input="handleInput('name')" @blur="handleBlur('name')" />
-          <span v-if="errors.name" class="form-error">{{ errors.name }}</span>
-        </div>
+        <TextField
+          id="name"
+          label="Nombre completo"
+          placeholder="Ej. Ana Pérez"
+          v-model="values.name"
+          :error="errors.name"
+          @input="handleInput('name')"
+          @blur="handleBlur('name')"
+          class="full"
+        />
 
         <div class="form-grid">
-          <div class="form-group">
-            <label class="form-label" for="email">Correo electrónico</label>
-            <input id="email" type="email" class="form-control" :class="{ invalid: errors.email }"
-              placeholder="tucorreo@ejemplo.com" v-model="values.email"
-              @input="handleInput('email')" @blur="handleBlur('email')" />
-            <span v-if="errors.email" class="form-error">{{ errors.email }}</span>
-          </div>
+          <TextField
+            id="email"
+            type="email"
+            label="Correo electrónico"
+            placeholder="tucorreo@ejemplo.com"
+            v-model="values.email"
+            :error="errors.email"
+            @input="handleInput('email')"
+            @blur="handleBlur('email')"
+          />
 
-          <div class="form-group">
-            <label class="form-label" for="phone">Teléfono</label>
-            <input id="phone" type="tel" class="form-control" :class="{ invalid: errors.phone }"
-              placeholder="0991234567" v-model="values.phone"
-              @input="handleInput('phone')" @blur="handleBlur('phone')" />
-            <span v-if="errors.phone" class="form-error">{{ errors.phone }}</span>
-          </div>
+          <TextField
+            id="phone"
+            type="tel"
+            label="Teléfono"
+            placeholder="0991234567"
+            v-model="values.phone"
+            :error="errors.phone"
+            @input="handleInput('phone')"
+            @blur="handleBlur('phone')"
+          />
 
-          <div class="form-group">
-            <label class="form-label" for="date">Fecha</label>
-            <input id="date" type="date" :min="today()" class="form-control" :class="{ invalid: errors.date }"
-              v-model="values.date" @change="handleInput('date')" @blur="handleBlur('date')" />
-            <span v-if="errors.date" class="form-error">{{ errors.date }}</span>
-          </div>
+          <TextField
+            id="date"
+            type="date"
+            label="Fecha"
+            :min="today()"
+            v-model="values.date"
+            :error="errors.date"
+            @change="handleInput('date')"
+            @blur="handleBlur('date')"
+          />
 
-          <div class="form-group">
-            <label class="form-label" for="time">Horario</label>
-            <select id="time" class="form-control" :class="{ invalid: errors.time }"
-              v-model="values.time" @change="handleInput('time')" @blur="handleBlur('time')">
-              <option value="">Selecciona una hora</option>
-              <option v-for="t in timeSlots" :key="t" :value="t">{{ t }}</option>
-            </select>
-            <span v-if="errors.time" class="form-error">{{ errors.time }}</span>
-          </div>
+          <SelectField
+            id="time"
+            label="Horario"
+            placeholder="Selecciona una hora"
+            :options="timeSlots"
+            v-model="values.time"
+            :error="errors.time"
+            @change="handleInput('time')"
+            @blur="handleBlur('time')"
+          />
 
-          <div class="form-group">
-            <label class="form-label" for="guests">Personas</label>
-            <select id="guests" class="form-control" :class="{ invalid: errors.guests }"
-              v-model="values.guests" @change="handleInput('guests')" @blur="handleBlur('guests')">
-              <option value="">¿Cuántos asistirán?</option>
-              <option v-for="g in guestOptions" :key="g" :value="g">{{ g }}</option>
-            </select>
-            <span v-if="errors.guests" class="form-error">{{ errors.guests }}</span>
-          </div>
+          <SelectField
+            id="guests"
+            label="Personas"
+            placeholder="¿Cuántos asistirán?"
+            :options="guestOptions"
+            v-model="values.guests"
+            :error="errors.guests"
+            @change="handleInput('guests')"
+            @blur="handleBlur('guests')"
+          />
 
-          <div class="form-group">
-            <label class="form-label" for="occasion">Ocasión (opcional)</label>
-            <select id="occasion" class="form-control" v-model="values.occasion">
-              <option value="">Sin especificar</option>
-              <option v-for="o in occasions" :key="o" :value="o">{{ o }}</option>
-            </select>
-          </div>
+          <SelectField
+            id="occasion"
+            label="Ocasión (opcional)"
+            placeholder="Sin especificar"
+            :options="occasions"
+            v-model="values.occasion"
+          />
         </div>
 
-        <div class="form-group full">
-          <label class="form-label" for="notes">Notas para el restaurante (opcional)</label>
-          <textarea id="notes" class="form-control"
-            placeholder="Alergias, silla para bebé, mesa junto a la ventana..." v-model="values.notes"></textarea>
-        </div>
+        <TextField
+          id="notes"
+          type="textarea"
+          label="Notas para el restaurante (opcional)"
+          placeholder="Alergias, silla para bebé, mesa junto a la ventana..."
+          v-model="values.notes"
+          class="full"
+        />
 
-        <button type="submit" class="btn btn-primary btn-block">Confirmar reserva</button>
+        <Button type="submit" class="btn-block">Confirmar reserva</Button>
       </form>
     </div>
   </section>

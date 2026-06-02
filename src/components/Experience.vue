@@ -1,6 +1,7 @@
 <script setup>
 import { experience } from "../data";
 import Icon from "./Icon.vue";
+import Card from "./ui/Card.vue";
 </script>
 
 <template>
@@ -14,11 +15,16 @@ import Icon from "./Icon.vue";
       </div>
 
       <div class="grid-3">
-        <article class="exp-card" v-for="e in experience" :key="e.title">
-          <span class="exp-icon"><Icon :name="e.icon" :size="28" /></span>
-          <h3>{{ e.title }}</h3>
-          <p>{{ e.text }}</p>
-        </article>
+        <Card
+          v-for="e in experience"
+          :key="e.title"
+          :title="e.title"
+          :description="e.text"
+        >
+          <template #icon>
+            <Icon :name="e.icon" :size="28" />
+          </template>
+        </Card>
       </div>
     </div>
   </section>

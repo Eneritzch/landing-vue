@@ -1,5 +1,7 @@
 <script setup>
 import { dishes } from "../data";
+import Badge from "./ui/Badge.vue";
+import Button from "./ui/Button.vue";
 </script>
 
 <template>
@@ -20,12 +22,12 @@ import { dishes } from "../data";
             <span class="menu-price">${{ d.price }}</span>
           </div>
           <p class="menu-desc">{{ d.desc }}</p>
-          <span class="badge">{{ d.tag }}</span>
+          <Badge>{{ d.tag }}</Badge>
         </article>
       </div>
 
       <div class="menu-foot">
-        <a href="#reservar" class="btn btn-primary">Reservar mesa</a>
+        <Button as="a" href="#reservar" variant="primary">Reservar mesa</Button>
       </div>
     </div>
   </section>
